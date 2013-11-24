@@ -1,2 +1,14 @@
-application/cache/*
-application/logs/*
+# Linux
+.*
+!.htaccess
+!.gitignore
+*~
+
+# OS X
+.DS_Store
+# Thumbnails
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini

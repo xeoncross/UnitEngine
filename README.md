@@ -1,4 +1,4 @@
 unitengine
 ==========
 
-A distributed PHP framework powered by small bits of social, dependency-aware code
+A distributed PHP framework powered by small units of social, dependency-aware code.
