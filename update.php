@@ -4,8 +4,8 @@
 passthru('git --version; type git');
 $runAgain = false;
 
-// Starting with gvm, loop over all existing gists
-foreach (array_merge(array('.'), glob("*/")) as $directory) {
+// Starting with us, then loop over all existing gists
+foreach (array_merge(array('../'), glob("*/")) as $directory) {
 
 	chdir(__DIR__ . '/' . $directory);
 	is_dir('.git') AND passthru('git pull origin master');
@@ -27,4 +27,6 @@ foreach (array_merge(array('.'), glob("*/")) as $directory) {
 
 if($runAgain) {
 	passthru("php ".__FILE__);
+} else {
+	passthru("php " . __DIR__ . '/compile.php');
 }
