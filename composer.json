@@ -1,0 +1,17 @@
+{
+	"name": "xeoncross/unitengine",
+	"type": "library",
+	"keywords": ["micro", "small", "framework", "microframework", "gist", "unit"],
+	"license": "MIT",
+	"description": "A distributed PHP framework powered by small units of social, dependency-aware code",
+	"homepage": "http://unitengine.com",
+	"authors": [
+		{
+			"name": "David Pennington",
+			"homepage": "http://davidpennington.me"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0"
+	}
+}
