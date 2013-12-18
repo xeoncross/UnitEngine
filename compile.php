@@ -4,20 +4,20 @@ chdir(__DIR__);
 
 $code = '<?php';
 
-foreach (glob("*/*.php") as $file) {
-	print $file . "\n";
-	$name = basename($file);
-
-	if(strpos($file, 'PHPUnit') !== FALSE) {
+foreach (glob("Units/*/*.php") as $file) {
+	
+	//print $file . "\n";
+	$filename = basename($file);
+	
+	// Do not compile the unit test code
+	if(strpos($filename, 'Test') !== FALSE) {
 		continue;
 	}
 
-	if($name == 'UnitTest.php') {
-		copy($file, __DIR__ . '/'. $name);
-		continue;
+	// Ignore lower-case file names (i.e. sample/support files)
+	if(preg_match('~[A-Z]~', $filename)) {
+		$code .= substr(file_get_contents($file), 5);
 	}
-
-	$code .= substr(file_get_contents($file), 5);
 }
 
-file_put_contents('UnitEngine.php', $code);
+file_put_contents(__DIR__ . '/UnitEngine.php', $code);

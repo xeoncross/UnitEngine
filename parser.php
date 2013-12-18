@@ -44,6 +44,8 @@ foreach($tokens as $token)
 /**
  * Anything more than 100 commands long fails
  */
-if($count <= 1000) {
-	print $count;
+if($count <= 100) {
+	print "\033[1;33m$count\033[0m\n";
+} else {
+	print "\033[1;31m$count\033[0m\n";
 }

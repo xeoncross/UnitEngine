@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="bootstrap.php">
+	<testsuites>
+		<testsuite name="UnitEngine Tests">
+			<directory suffix="Test.php">../*</directory>
+		</testsuite>
+	</testsuites>
+	<php>
+		<includePath>../</includePath>
+		<ini name="foo" value="bar_ini"/>
+		<const name="FOO" value="bar_const"/>
+		<var name="foo" value="bar_var"/>
+		<env name="foo" value="bar_env"/>
+		<post name="foo" value="bar_post"/>
+		<get name="foo" value="bar_get"/>
+		<cookie name="foo" value="bar_cookie"/>
+		<server name="foo" value="bar_server"/>
+		<request name="foo" value="bar_request"/>
+	</php>
+</phpunit>
