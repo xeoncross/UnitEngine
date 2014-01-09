@@ -15,7 +15,7 @@ foreach (glob("Units/*/*.php") as $file) {
 	}
 
 	// Ignore lower-case file names (i.e. sample/support files)
-	if(preg_match('~[A-Z]~', $filename)) {
+	if(preg_match('~[A-Z]~', $filename{0})) {
 		$code .= substr(file_get_contents($file), 5);
 	}
 }

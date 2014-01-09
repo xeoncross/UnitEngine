@@ -30,10 +30,12 @@ foreach($tokens as $token)
 	 * Don't write trash, just make it concise.
 	 */
 	if( ! in_array($token[0], array(
-		'{', '}', '(', ')',
+		'{', '}', '(', ')', ';',
 		T_WHITESPACE,
 		T_COMMENT,T_DOC_COMMENT,
 		T_CLASS,T_IMPLEMENTS,T_INTERFACE,T_EXTENDS,T_ABSTRACT,
+		T_DOUBLE_COLON,T_OBJECT_OPERATOR,
+		//T_OPEN_TAG,T_CLOSE_TAG,
 		T_FUNCTION,
 		T_NAMESPACE,T_USE,T_NS_SEPARATOR
 	))) {

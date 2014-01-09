@@ -12,3 +12,7 @@
 # Windows
 Thumbs.db
 Desktop.ini
+
+# Project
+Units/
+!Units/.gitkeep

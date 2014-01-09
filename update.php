@@ -13,7 +13,7 @@ if(empty($argv[1])) {
 	 * units and checkout only the ones we need. Makes the compile stage much
 	 * easier.
 	 *
-	 * @todo this wastes bandwidth
+	 * @todo this wastes bandwidth re-downloading projects over and over
 	 */
 	foreach(
 			new RecursiveIteratorIterator(
@@ -46,8 +46,8 @@ foreach (array_merge(array('../'), glob("Units/*")) as $directory) {
 	 * Format to:
 	 * 	https://gist.github.com/([hash]|[integer]).git
 	 */
-	if(is_file('Units.md')) {
-		if(preg_match_all('~https://gist.github.com/(?:\w+/)?(\w+)~', file_get_contents('Units.md'), $matches)) {
+	if(is_file('readme.md')) {
+		if(preg_match_all('~https://gist.github.com/(?:\w+/)?(\w+)~', file_get_contents('readme.md'), $matches)) {
 			foreach($matches[1] as $id) {
 				chdir(__DIR__ . '/Units');
 				if( ! is_dir($id)) {
